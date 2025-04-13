@@ -1,3 +1,6 @@
-[submodule "minGPT"]
-	path = minGPT
+[submodule "KarpathyRepos/minGPT"]
+	path = KarpathyRepos/minGPT
 	url = https://github.com/karpathy/minGPT
+[submodule "KarpathyRepos/nano-llama31"]
+	path = KarpathyRepos/nano-llama31
+	url = https://github.com/karpathy/nano-llama31
