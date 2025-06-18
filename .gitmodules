@@ -4,3 +4,9 @@
 [submodule "KarpathyRepos/nano-llama31"]
 	path = KarpathyRepos/nano-llama31
 	url = https://github.com/karpathy/nano-llama31
+[submodule "books/LLMs-from-scratch"]
+	path = books/LLMs-from-scratch
+	url = https://github.com/rasbt/LLMs-from-scratch
+[submodule "books/fastai"]
+	path = books/fastai
+	url = https://github.com/fastai/fastbook
