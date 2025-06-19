@@ -1,0 +1,6 @@
+### Ideas más importantes del capítulo:
+#### 1. Los LLM (como toda red neuronal) requieren que se les pasen números para funcionar. Para convertir texto a números, utilizamos los tokenizadores.
+#### 2. En el proceso de tokenización, se utiliza generalmente BPE debido a que de esta forma, el tokenizador nunca lanzará excepciones a pesar de afrontar data que no exista en el entrenamiento y el LLM tras el podrá gestionar esos tokens extraños que antiguamente se gestionaban con el token especial "\<unk\>"
+#### 3. Se cargan los dataloader mediante sliding windows con los token IDs. Normalmente cargamos en batches, en un tensor la x que contendrá tokens por poner un ejemplo en un rango de 0->3. Por el otro lado, la y contendrá los tokens correspondientes a una posición más frente a la x, es decir, en un rango 1->4.
+#### 4. La embedding layer o capa de embeddings no conserva ninguna información posicional sobre los tokens. Es por ello, que se añade un posicional encoder que lo que hace es utilizar una nueva capa de embeddings que se asignan en el caso de ejemplo a posiciones absolutas en los tokens de la muestra. De esta forma, el LLM podrá luego aprender sobre las relaciones entre las posiciones de las palabras (o tokens) en el texto.
+#### 5. 
