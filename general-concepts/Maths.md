@@ -1,7 +1,3 @@
-Alright, let's present these concepts with a cleaner structure and equations formatted using KaTeX.
-
-***
-
 ## Core Concepts in Classification & Probabilistic Modeling
 
 Here's a breakdown of Negative Log Likelihood, Logit, Softmax, and Log Softmax, commonly used in machine learning, especially for classification tasks.
@@ -107,4 +103,73 @@ Here's a breakdown of Negative Log Likelihood, Logit, Softmax, and Log Softmax, 
 
 ---
 
-**Relationship:** In many deep learning frameworks, the `CrossEntropyLoss` function implicitly performs `LogSoftmax` on the input logits and then calculates the `NLLLoss`. This is the standard and numerically preferred way to train multi-class classification networks.
+**Relationships:** In many deep learning frameworks, the `CrossEntropyLoss` function implicitly performs `LogSoftmax` on the input logits and then calculates the `NLLLoss`. This is the standard and numerically preferred way to train multi-class classification networks.
+
+---
+
+## 5. Dot Product
+
+*   **Concept:**
+    The **dot product** (also called the *inner product* or *scalar product*) is a fundamental operation in linear algebra. It measures the degree of alignment between two vectors. A large positive value indicates the vectors point in a similar direction; zero means they are orthogonal; a large negative value means they point in opposite directions.
+
+    In machine learning, the dot product appears everywhere: linear layers, attention mechanisms, similarity measures, gradient calculations, and geometric interpretations of embeddings.
+
+*   **Purpose:**
+    * Computes weighted sums in neural networks (e.g., linear layers: ( Wx + b )).
+    * Measures similarity between vectors (e.g., cosine similarity uses a normalized dot product).
+    * Projects one vector onto another.
+    * Forms the basis of matrix multiplication.
+
+*   **Equation(s):**
+
+    Let $\mathbf{a} = [a_1, a_2, \dots, a_n]$, $\mathbf{b} = [b_1, b_2, \dots, b_n]$
+    be two vectors of equal dimension ( n ).
+
+*   **Dot product definition:**
+
+    Let  
+    $\mathbf{a} = [a_1, a_2, \dots, a_n]$ and $\mathbf{b} = [b_1, b_2, \dots, b_n]$.
+
+    The dot product is:
+    $$
+    \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i
+    $$
+
+    Expanded form:
+    $$
+    \mathbf{a} \cdot \mathbf{b}
+    = a_1 b_1 + a_2 b_2 + \dots + a_n b_n
+    $$
+
+*   **Geometric interpretation:**
+    $$
+    \mathbf{a} \cdot \mathbf{b}
+    = \|\mathbf{a}\|\, \|\mathbf{b}\| \cos(\theta)
+    $$
+
+    where $\theta$ is the angle between the vectors, and
+    $$
+    \|\mathbf{a}\| = \sqrt{\sum_{i=1}^n a_i^2}
+    $$
+    is the Euclidean norm.
+
+    This form shows that the dot product encodes *directional similarity*. When:
+
+    * $\theta = 0^\circ$: vectors perfectly aligned → dot product is maximal.  
+    * $\theta = 90^\circ$: vectors orthogonal → dot product is zero.  
+    * $\theta = 180^\circ$: vectors opposite → dot product is negative.
+
+*   **Matrix form (common in deep learning):**
+
+    If $\mathbf{W}$ is a weight matrix and $\mathbf{x}$ is an input vector:
+    $$
+    \mathbf{W}\mathbf{x}
+    $$
+    is computed as a series of dot products between the rows of $\mathbf{W}$ and the vector $\mathbf{x}$.
+
+---
+
+**Relationship:**  
+    The dot product is the building block of linear transformations, attention mechanisms (via **query·key** similarity scores), embeddings, and most neural network computations. Without dot products, deep learning would not exist in its current
+
+---
